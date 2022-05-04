@@ -15,7 +15,25 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
+
+Route::get('/forum',function(){
+    return view('forum');
+})->name('forum');
+
+Route::get('/about',function(){
+    return view('about');
+})->name('about');
+
+Route::get('/resources',function(){
+    return view('means');
+})->name('resources');
+
+Route::get('/help',function(){
+    return view('help');
+})->name('help');
+
+
 
 Route::middleware([
     'auth:sanctum',
