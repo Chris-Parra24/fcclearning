@@ -45,6 +45,14 @@ Route::middleware([
     })->name('dashboard');
     
     Route::get('/forumlog',function(){
-        return view('forum.forumlog');
+        return view('logviews.forumlog');
     })->name('forumlog');
+
+    Route::get('/resourceslog',function(){
+        return "Recursos";
+    })->name('resourceslog');
+
+    Route::get('/helplog',function(){
+        return "Ayuda";
+    })->name('helplog');
 });

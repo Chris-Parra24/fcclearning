@@ -19,6 +19,14 @@
                     <x-jet-nav-link href="{{ route('forumlog') }}" :active="request()->routeIs('forumlog')">
                         Foro
                     </x-jet-nav-link>
+
+                    <x-jet-nav-link href="{{ route('resourceslog') }}" :active="request()->routeIs('resourceslog')">
+                        Recursos
+                    </x-jet-nav-link>
+
+                    <x-jet-nav-link href="{{ route('helplog') }}" :active="request()->routeIs('helplog')">
+                        Ayuda
+                    </x-jet-nav-link>
                 </div>
             </div>
 
@@ -147,6 +155,14 @@
 
             <x-jet-responsive-nav-link href="{{ route('forumlog') }}" :active="request()->routeIs('forumlog')">
                 Foro
+            </x-jet-responsive-nav-link>
+
+            <x-jet-responsive-nav-link href="{{ route('resourceslog') }}" :active="request()->routeIs('resourceslog')">
+                Recursos
+            </x-jet-responsive-nav-link>
+
+            <x-jet-responsive-nav-link href="{{ route('helplog') }}" :active="request()->routeIs('helplog')">
+                Ayuda
             </x-jet-responsive-nav-link>
         </div>
 
