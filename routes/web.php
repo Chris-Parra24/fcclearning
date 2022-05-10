@@ -15,22 +15,31 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+<<<<<<< HEAD
 
 Route::get('/', HomeController::class)->name('home');
 Route::get('/forum', [ForumController::class,'index'])->name('forum.index');
+=======
+Route::get('/', function () {
+    return view('inicio.home');
+})->name('home');
+
+Route::get('/forum',function(){
+    return view('inicio.forum');
+})->name('forum');
+>>>>>>> origin/dev
 
 Route::get('/about',function(){
-    return view('about');
+    return view('inicio.about');
 })->name('about');
 
 Route::get('/resources',function(){
-    return view('means');
+    return view('inicio.means');
 })->name('resources');
 
 Route::get('/help',function(){
-    return view('help');
+    return view('inicio.help');
 })->name('help');
-
 
 
 Route::middleware([
@@ -38,7 +47,20 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
+    
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    
+    Route::get('/forumlog',function(){
+        return view('logviews.forumlog');
+    })->name('forumlog');
+
+    Route::get('/resourceslog',function(){
+        return "Recursos";
+    })->name('resourceslog');
+
+    Route::get('/helplog',function(){
+        return "Ayuda";
+    })->name('helplog');
 });
