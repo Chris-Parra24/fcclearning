@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ForumController;
+use App\Http\Controllers\ForumController2;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -51,9 +52,10 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
     
-    Route::get('/forumlog',function(){
-        return view('logviews.forumlog');
-    })->name('forumlog');
+    Route::get('/forumlog',[ForumController2::class,'index'])->name('forumlog');
+
+    Route::get('/forumlog/{categoria}',[ForumController2::class,'show'])->name('forumlog.show');
+    Route::get('/forumlog/{categoria}/{id}',[ForumController2::class,'item'])->name('forumlog.item');
 
     Route::get('/resourceslog',function(){
         return "Recursos";
