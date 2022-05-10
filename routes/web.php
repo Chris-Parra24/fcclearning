@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ForumController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,13 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
 
-Route::get('/forum',function(){
-    return view('forum');
-})->name('forum');
+Route::get('/', HomeController::class)->name('home');
+Route::get('/forum', [ForumController::class,'index'])->name('forum.index');
 
 Route::get('/about',function(){
     return view('about');

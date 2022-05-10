@@ -37,7 +37,7 @@
                 <a href="{{ route('home') }}" class="nav-link">Home</a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('forum') }}" class="nav-link">Foro</a>
+                <a href="{{ route('forum.index') }}" class="nav-link">Foro</a>
               </li>
               <li class="nav-item">
                 <a href="{{ route('resources') }}" class="nav-link">Recursos</a>
