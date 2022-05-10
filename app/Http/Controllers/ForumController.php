@@ -10,12 +10,12 @@ class ForumController extends Controller
         // $users=User::paginate();
         // return $users; 
         // return view('forums.index',compact('users'));
-        return view('forum.index');
+        return view('inicio.forum');
     }
 
-    public function create(){
-        return view('forums.create');
-    }
+    // public function create(){
+    //     return view('forums.create');
+    // }
     
     // public function store(){
     //     return view('forums.store');

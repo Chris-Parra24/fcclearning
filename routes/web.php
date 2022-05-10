@@ -15,19 +15,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-<<<<<<< HEAD
 
 Route::get('/', HomeController::class)->name('home');
 Route::get('/forum', [ForumController::class,'index'])->name('forum.index');
-=======
-Route::get('/', function () {
-    return view('inicio.home');
-})->name('home');
+// Route::get('/', function () {
+//     return view('inicio.home');
+// })->name('home');
 
-Route::get('/forum',function(){
-    return view('inicio.forum');
-})->name('forum');
->>>>>>> origin/dev
+// Route::get('/forum',function(){
+//     return view('inicio.forum');
+// })->name('forum');
 
 Route::get('/about',function(){
     return view('inicio.about');
