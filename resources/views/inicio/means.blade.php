@@ -2,7 +2,7 @@
 @section('title', 'Recursos')
 @section('content')
   <!--RECURSOS-->
-  <section class="p-5" style="height: 100%">
+  <section class="p-5">
     <!-- Nav tabs -->
     <ul class="nav nav-tabs">
       <li class="nav-item">

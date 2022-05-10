@@ -2,7 +2,7 @@
 @section('title', 'FCCLearning')
 @section('content')
     <!--HOME-->
-    <section style="height: 575px">
+    <section >
       <div class="p-5">
         <div class="row">
           <div class="col-sm-12 d-flex justify-content-center">

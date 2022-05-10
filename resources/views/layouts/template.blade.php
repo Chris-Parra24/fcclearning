@@ -72,7 +72,7 @@
 
 
     <!--FOOTER-->
-    <section class="">
+    <section class="mt-auto">
       <footer class="text-center text-white" style="background-color: #0a4275">
         <div class="container p-4 pb-0">
           <section class="">

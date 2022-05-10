@@ -32,7 +32,7 @@
           <ul class="list-gruop p-0 m-0 list-group-flush">
               @foreach ($forums as $item)
                 @if ($item->category==$category) 
-                  <li class=""> {{$item->title}}</li>          
+                  <li class="list-group-item"> {{$item->title}}</li>          
                 @endif
               @endforeach
           </ul>

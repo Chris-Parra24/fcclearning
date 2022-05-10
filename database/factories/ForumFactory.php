@@ -15,7 +15,7 @@ class ForumFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->name(),
+            'title' => $this->faker->sentence(),
             'category' =>$this->faker->randomElement(['Matematicas','Programación','Consejos']),
             'description'=>$this->faker->sentence(),
             'user_id'=>User::all()->random()->id
