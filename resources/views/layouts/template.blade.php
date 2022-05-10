@@ -20,7 +20,7 @@
       >
         <div class="container-fluid">
           <a class="navbar-brand" href="{{ route('home') }}">
-            <img src="img/logo.png" alt="" width="70" height="70" />
+            <img src="{{asset('img/logo.png')}}" alt="" width="70" height="70" />
           </a>
           <button
             type="button"

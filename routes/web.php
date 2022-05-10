@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeController::class)->name('home');
 Route::get('/forum', [ForumController::class,'index'])->name('forum.index');
+Route::get('/forum/{categoria}', [ForumController::class,'show'])->name('forum.show');
+Route::get('/forum/{categoria}/{id}', [ForumController::class,'show_item'])->name('forum.show.item');
 // Route::get('/', function () {
 //     return view('inicio.home');
 // })->name('home');

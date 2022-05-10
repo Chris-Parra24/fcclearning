@@ -12,48 +12,34 @@
   </div>
 </section>
 <section class="d-flex flex-column" style="height: 100%">
-  <div class="px-5 pb-3">
-    <div class="card d-flex">
-      <h5 class="card-header">Programación</h5>
-      <div class="card-body">
-        <!-- <h5 class="card-title">Tema</h5>
-        <p class="card-text">Descripción.</p>
-        <a href="#" class="btn btn-primary">Acceder</a> -->
-        <ul class="list-gruop p-0 m-0 list-group-flush">
-          <a href="#" class="list-group-item list-group-item-action"
-            >First item</a
-          >
-          <a href="#" class="list-group-item list-group-item-action"
-            >Second item</a
-          >
-          <a href="#" class="list-group-item list-group-item-action"
-            >Third item</a
-          >
-        </ul>
+    @php
+        $categorias=[];
+    @endphp
+
+    @foreach ($forums as $item)
+    @php
+      if(!in_array($item->category, $categorias))
+        array_push($categorias,$item->category);        
+    @endphp          
+    @endforeach
+
+
+    @foreach ($categorias as $category)
+    <div class="px-5 pb-3">
+      <div class="card d-flex">
+        <h5 class="card-header"><a href="{{route('forum.show',$category)}}">{{$category}}</a></h5>
+        <div class="card-body">
+          <ul class="list-gruop p-0 m-0 list-group-flush">
+              @foreach ($forums as $item)
+                @if ($item->category==$category) 
+                  <li class=""> {{$item->title}}</li>          
+                @endif
+              @endforeach
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="px-5 pb-3">
-    <div class="card d-flex">
-      <h5 class="card-header">Matemáticas</h5>
-      <div class="card-body">
-        <!-- <h5 class="card-title">Tema</h5>
-        <p class="card-text">Descripción.</p>
-        <a href="#" class="btn btn-primary">Acceder</a> -->
-        <ul class="list-gruop p-0 m-0 list-group-flush">
-          <a href="#" class="list-group-item list-group-item-action"
-            >First item</a
-          >
-          <a href="#" class="list-group-item list-group-item-action"
-            >Second item</a
-          >
-          <a href="#" class="list-group-item list-group-item-action"
-            >Third item</a
-          >
-        </ul>
-      </div>
-    </div>
-  </div>
+    @endforeach    
 </section>
 <!--FIN FORO-->
 @endsection

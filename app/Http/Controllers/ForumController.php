@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Forum;
+use App\Models\Reply;
 
 class ForumController extends Controller
 {
@@ -10,7 +12,8 @@ class ForumController extends Controller
         // $users=User::paginate();
         // return $users; 
         // return view('forums.index',compact('users'));
-        return view('inicio.forum');
+        $forums=Forum::all();
+        return view('inicio.forum',compact('forums'));
     }
 
     // public function create(){
@@ -21,9 +24,15 @@ class ForumController extends Controller
     //     return view('forums.store');
     // }
 
-    // public function show($id){
-    //     $forum=User::find($id);
-    //     return view('forums.show',compact('forum'));
-    //     return view('forums.show',['forum_id'=>$forum_id]);//Opción 1, personalizar el nombre de la variable
-    // }
+    public function show($category){
+        $forums=Forum::where('category',$category)->get();
+        return view('inicio.forum.show',compact('forums'));
+        // return view('forums.show',['forum_id'=>$forum_id]);//Opción 1, personalizar el nombre de la variable
+    }
+    public function show_item($category,$id){
+        $forum=Forum::where('id',$id)->get()->first();
+        $replies=Reply::where('forum_id',$id)->get();
+        return view('inicio.forum.item',['forum'=>$forum,'replies'=>$replies]);
+        // return view('forums.show',['forum_id'=>$forum_id]);//Opción 1, personalizar el nombre de la variable
+    }
 }
