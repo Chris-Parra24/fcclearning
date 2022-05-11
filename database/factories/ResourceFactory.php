@@ -18,7 +18,7 @@ class ResourceFactory extends Factory
             'name' => $this->faker->sentence(),
             'category' =>$this->faker->randomElement(['Libros','Articulos','Prácticas','videos']),
             'URL'=>$this->faker->url(),
-            'description'=>$this->faker->sentence(),
+            'description'=>$this->faker->text(),
             'user_id'=>User::all()->random()->id
         ];
     }
