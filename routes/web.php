@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ForumController;
+use App\Http\Controllers\ResourceController;
 use App\Http\Controllers\ForumController2;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -54,14 +55,27 @@ Route::middleware([
     
     Route::get('/forumlog',[ForumController2::class,'index'])->name('forumlog');
 
+    Route::get('/forumlog/create',[ForumController2::class,'create'])->name('forumlog.create');
     Route::get('/forumlog/{categoria}',[ForumController2::class,'show'])->name('forumlog.show');
     Route::get('/forumlog/{categoria}/{id}',[ForumController2::class,'item'])->name('forumlog.item');
+    Route::post('/forumlog/store/{user_id}',[ForumController2::class,'store'])->name('forumlog.store');
 
-    Route::get('/resourceslog',function(){
-        return "Recursos";
-    })->name('resourceslog');
+    // Route::get('/resourceslog',function(){
+    //     return "Recursos";
+    // })->name('resourceslog');
+    Route::get('/resources2', [ResourceController::class,'index'])->name('resourceslog');
+    Route::get('/resources2/{tipo}', [ResourceController::class,'show'])->name('resources.show');
+    Route::get('/resources2/create', [ResourceController::class,'create'])->name('resources.create');
+    Route::post('/resources2/store', [ResourceController::class,'store'])->name('resources.store');
 
     Route::get('/helplog',function(){
         return "Ayuda";
     })->name('helplog');
 });
+
+
+//Routes for resources
+// Route::get('/resources2', [ResourceController::class,'index'])->name('resources.index');
+// Route::post('/resources2/create', [ResourceController::class,'create'])->name('resources.create');
+// Route::get('/resources2/store', [ResourceController::class,'store'])->name('resources.store');
+

@@ -19,6 +19,7 @@ class CreateResourcesTable extends Migration
             $table->string('URL');
             $table->text('description');
             $table->string('category');
+            $table->string('type');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')
                 ->references('id')

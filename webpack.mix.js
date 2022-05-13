@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+const path = require('path');
 
 /*
  |--------------------------------------------------------------------------
@@ -16,6 +17,15 @@ mix.js('resources/js/app.js', 'public/js')
         require('postcss-import'),
         require('tailwindcss'),
     ]);
+
+mix.webpackConfig({
+    entry : './resources/js/foro.js',
+    output : {
+        path : path.resolve(__dirname,'public/js'),
+        filename : 'funcionalidad.js'
+    },
+    mode : 'development'
+});
 
 if (mix.inProduction()) {
     mix.version();

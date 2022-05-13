@@ -16,7 +16,7 @@ class ForumFactory extends Factory
     {
         return [
             'title' => $this->faker->sentence(),
-            'category' =>$this->faker->randomElement(['Matematicas','Programación','Consejos']),
+            'category' =>$this->faker->randomElement(['Matemáticas','Programación','Consejos']),
             'description'=>$this->faker->text(),
             'user_id'=>User::all()->random()->id
         ];

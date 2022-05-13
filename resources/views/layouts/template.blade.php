@@ -49,6 +49,7 @@
                 <a href="{{ route('about') }}" class="nav-link">Nosotros</a>
               </li>
             </ul>
+
             <div class="d-flex">
               <a
                 href="{{ route('login') }}"
@@ -60,7 +61,7 @@
                 class="btn text-decoration-none bg-primary text-white me-2"
                 >Registrarse</a
               >
-            </div>
+            </div>  
           </div>
         </div>
       </nav>
