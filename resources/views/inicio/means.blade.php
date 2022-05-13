@@ -15,9 +15,9 @@
           >Prácticas</a
         >
       </li>
-      <li class="nav-item">
+      {{-- <li class="nav-item">
         <a class="nav-link" data-bs-toggle="tab" href="#videos">Videos</a>
-      </li>
+      </li> --}}
       <li class="nav-item">
         <a class="nav-link" data-bs-toggle="tab" href="#articulos"
           >Articulos</a
@@ -119,7 +119,7 @@
           </div>
         </div>
       </div>
-      <div class="tab-pane fade" id="videos">
+      {{-- <div class="tab-pane fade" id="videos">
         <div class="row">
           <div class="col p-3">
             <div class="card" style="width: 16rem">
@@ -134,7 +134,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> --}}
       <div class="tab-pane fade" id="articulos">
         <div class="row">
           <div class="col p-3">

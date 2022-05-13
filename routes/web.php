@@ -3,6 +3,7 @@
 use App\Http\Controllers\ForumController;
 use App\Http\Controllers\ResourceController;
 use App\Http\Controllers\ForumController2;
+use App\Http\Controllers\HelpController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -54,11 +55,13 @@ Route::middleware([
     })->name('dashboard');
     
     Route::get('/forumlog',[ForumController2::class,'index'])->name('forumlog');
-
     Route::get('/forumlog/create',[ForumController2::class,'create'])->name('forumlog.create');
     Route::get('/forumlog/{categoria}',[ForumController2::class,'show'])->name('forumlog.show');
     Route::get('/forumlog/{categoria}/{id}',[ForumController2::class,'item'])->name('forumlog.item');
     Route::post('/forumlog/store/{user_id}',[ForumController2::class,'store'])->name('forumlog.store');
+    Route::post('/forumlog/edit/{user_id}/{forum_id}',[ForumController2::class,'edit'])->name('forumlog.edit');
+    Route::put('/forumlog/update/{forum}',[ForumController2::class,'update'])->name('forumlog.update');
+    Route::post('/forumlog/reply/{user_id}/{forum}',[ForumController2::class,'reply'])->name('forumlog.reply');
 
     // Route::get('/resourceslog',function(){
     //     return "Recursos";
@@ -66,11 +69,14 @@ Route::middleware([
     Route::get('/resources2', [ResourceController::class,'index'])->name('resourceslog');
     Route::get('/resources2/{tipo}', [ResourceController::class,'show'])->name('resources.show');
     Route::get('/resources2/create', [ResourceController::class,'create'])->name('resources.create');
-    Route::post('/resources2/store', [ResourceController::class,'store'])->name('resources.store');
-
-    Route::get('/helplog',function(){
-        return "Ayuda";
-    })->name('helplog');
+    Route::post('/resources2/store/{user_id}', [ResourceController::class,'store'])->name('resources.store');
+    
+    // Route::get('/helplog',function(){
+    //     return "Ayuda";
+    // })->name('helplog');
+    Route::get('/helplog', [HelpController::class,'index'])->name('helplog.index');
+    Route::get('/helplog/rules', [HelpController::class,'rules'])->name('helplog.rules');
+    Route::get('/helplog/steps', [HelpController::class,'steps'])->name('helplog.steps');
 });
 
 

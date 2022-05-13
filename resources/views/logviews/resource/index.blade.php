@@ -1,60 +1,99 @@
 <x-app-layout>
-    <!--FORO-->
-    <section style="height: 100%">
-      <div class="p-5">
-        <div class="row">
-          <div class="col-sm-12 d-flex justify-content-center">
-            <h1 >Recursos</h2>
+  <!--RECURSOS-->
+  
+  <section class="p-5">
+    <div class="container">
+      <x-boton-subir-recurso/>
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" data-bs-toggle="tab" href="#libros"
+            >Libros</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#practicas"
+            >Prácticas</a
+          >
+        </li>
+        {{-- <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#videos">Videos</a>
+        </li> --}}
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#articulos"
+            >Articulos</a
+          >
+        </li>
+      </ul>
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div class="tab-pane active" id="libros">
+          <div class="row">
+            <div class="col p-3">
+              <div class="card" style="width: 16rem">
+                <img src="{{asset('/storage/resources/elvybM5nrBNFyk8bDmrTK2W71JLNpgeol69oyrr3.jpg')}}" class="card-img-top" alt="Libro" />
+                <div class="card-body">
+                  Es una imagen de ejemplo, creo deberia existir imagenes en BD.
+                  Esto se tiene que repetir acorde al numero de libros que esten
+                  registrados en BD. (Aquí deberia ir una descripcion o titulo
+                  del libro)
+                </div>
+                <a href="#" class="btn btn-primary">Ver</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="practicas">
+          <div class="row">
+            <div class="col p-3">
+              <div class="card" style="width: 16rem">
+                <img src="img/libro.png" class="card-img-top" alt="Libro" />
+                <div class="card-body">
+                  Es una imagen de ejemplo, creo deberia existir imagenes en BD.
+                  Esto se tiene que repetir acorde al numero de libros que esten
+                  registrados en BD. (Aquí deberia ir una descripcion o titulo
+                  del libro)
+                </div>
+                <a href="#" class="btn btn-primary">Ver</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {{-- <div class="tab-pane fade" id="videos">
+          <div class="row">
+            <div class="col p-3">
+              <div class="card" style="width: 16rem">
+                <img src="img/libro.png" class="card-img-top" alt="Libro" />
+                <div class="card-body">
+                  Es una imagen de ejemplo, creo deberia existir imagenes en BD.
+                  Esto se tiene que repetir acorde al numero de libros que esten
+                  registrados en BD. (Aquí deberia ir una descripcion o titulo
+                  del libro)
+                </div>
+                <a href="#" class="btn btn-primary">Ver</a>
+              </div>
+            </div>
+          </div>
+        </div> --}}
+        <div class="tab-pane fade" id="articulos">
+          <div class="row">
+            <div class="col p-3">
+              <div class="card" style="width: 16rem">
+                <img src="img/libro.png" class="card-img-top" alt="Libro" />
+                <div class="card-body">
+                  Es una imagen de ejemplo, creo deberia existir imagenes en BD.
+                  Esto se tiene que repetir acorde al numero de libros que esten
+                  registrados en BD. (Aquí deberia ir una descripcion o titulo
+                  del libro)
+                </div>
+                <a href="#" class="btn btn-primary">Ver</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </section>
-    <section class="d-flex flex-column" style="height: 100%">
-      <div class="px-5 pb-3">
-        <div class="card d-flex">
-          <h5 class="card-header">Documentos</h5>
-          <div class="card-body">
-            <!-- <h5 class="card-title">Tema</h5>
-            <p class="card-text">Descripción.</p>
-            <a href="#" class="btn btn-primary">Acceder</a> -->
-            <ul class="list-gruop p-0 m-0 list-group-flush">
-              <a href="card-libro.html" class="list-group-item list-group-item-action"
-                >PDF</a
-              >
-              <a href="card-libro.html" class="list-group-item list-group-item-action"
-                >Word</a
-              >
-              <a href="card-libro.html" class="list-group-item list-group-item-action"
-                >Powerpoint</a
-              >
-              <a href="card-libro.html" class="list-group-item list-group-item-action"
-                >Excel</a
-              >
-              <a href="card-libro.html" class="list-group-item list-group-item-action"
-                >Documentos TXT</a
-              >
-              <a href="card-libro.html" class="list-group-item list-group-item-action"
-                >Otros</a
-              >
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="px-5 pb-3">
-        <div class="card d-flex">
-          <h5 class="card-header">Multimedia</h5>
-          <div class="card-body">
-            <!-- <h5 class="card-title">Tema</h5>
-            <p class="card-text">Descripción.</p>
-            <a href="#" class="btn btn-primary">Acceder</a> -->
-            <ul class="list-gruop p-0 m-0 list-group-flush">
-              <a href="multimedia.html" class="list-group-item list-group-item-action"
-                >Videos</a
-              >
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--FIN FORO-->
+    </div>
+  </section>
+  <x-modal-recurso/>
+  <!--FIN RECURSOS-->
 </x-app-layout>

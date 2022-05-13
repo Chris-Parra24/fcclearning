@@ -39,13 +39,13 @@ __webpack_require__.r(__webpack_exports__);
 var dibujaCajaRespuesta = function dibujaCajaRespuesta() {
   //funcion que dibuja la caja de respuesta
   //la variable tendra codigo html
-  var hijo = "<div id=\"hijoRespuesta\"><form action=\"\" method=\"POST\">\n                    <label for=\"description\">Respuesta</label>\n                    <textarea class=\"form-control\" rows=\"5\" id=\"description\" placeholder=\"Escriba su respuesta a este foro\" name=\"description\"></textarea>\n                    <button type=\"submit\" class=\"btn btn-primary\">Publicar</button>\n                    <button type=\"button\" class=\"btn bg-light\" id=\"cancelarRespuesta\">Cancelar</button>\n                </form></div>"; //insertAdjacentHTML()
+  var hijo = "<div id=\"hijoRespuesta\"></form></div>"; //insertAdjacentHTML()
 
   _base__WEBPACK_IMPORTED_MODULE_0__.elementos.cajaRespuesta.insertAdjacentHTML('afterbegin', hijo);
 };
 var dibujarCajaEditar = function dibujarCajaEditar() {
   //funcion que dibuja la caja para editar el foro
-  var hijo = "<div id=\"hijoEdicion\" class=\"mb-4\">\n    <form action=\"\">\n      <label>Titulo</label>\n      <input type=\"text\" class=\"form-control mb-3\" id=\"threadTitle\" placeholder=\"Actualiza t\xEDtulo del foro\" autofocus=\"\" required name=\"title\"/>\n      <label>Descripcion</label>\n      <textarea\n      class=\"form-control\"\n      rows=\"5\"\n      id=\"description\"\n      placeholder=\"Actualiza la contenido del foro\"\n      name=\"description\"></textarea>\n      <button type=\"submit\" class=\"btn btn-primary\">Actualizar</button>\n      <button type=\"button\" class=\"btn bg-light\" id=\"cancelarEdicion\">Cancelar</button>\n    </form>\n  </div>";
+  var hijo = "<div id=\"hijoEdicion\"></div>";
   _base__WEBPACK_IMPORTED_MODULE_0__.elementos.cajaEdicion.insertAdjacentHTML('afterbegin', hijo);
 };
 var quitarCaja = function quitarCaja(nombrePadre) {
@@ -144,15 +144,25 @@ __webpack_require__.r(__webpack_exports__);
 
 
 _vistas_base__WEBPACK_IMPORTED_MODULE_0__.elementos.buttonRespuesta.addEventListener('click', function (e) {
-  if (_vistas_base__WEBPACK_IMPORTED_MODULE_0__.elementos.cajaRespuesta.childElementCount === 0) {
-    _vistas_foroView__WEBPACK_IMPORTED_MODULE_1__.dibujaCajaRespuesta();
+  // if(elementos.cajaRespuesta.childElementCount === 0){
+  //     foroView.dibujaCajaRespuesta();
+  // }
+  if (_vistas_base__WEBPACK_IMPORTED_MODULE_0__.elementos.cajaRespuesta.style.display == "block") {
+    _vistas_base__WEBPACK_IMPORTED_MODULE_0__.elementos.cajaRespuesta.style.display = "none";
+  } else {
+    _vistas_base__WEBPACK_IMPORTED_MODULE_0__.elementos.cajaRespuesta.style.display = "block";
   }
 });
 
 if (_vistas_base__WEBPACK_IMPORTED_MODULE_0__.elementos.buttonEdicion !== 'cadena') {
   _vistas_base__WEBPACK_IMPORTED_MODULE_0__.elementos.buttonEdicion.addEventListener('click', function (e) {
-    if (_vistas_base__WEBPACK_IMPORTED_MODULE_0__.elementos.cajaEdicion.childElementCount === 0) {
-      _vistas_foroView__WEBPACK_IMPORTED_MODULE_1__.dibujarCajaEditar();
+    // if(elementos.cajaEdicion.childElementCount === 0){
+    //     // foroView.dibujarCajaEditar();
+    // }
+    if (_vistas_base__WEBPACK_IMPORTED_MODULE_0__.elementos.cajaEdicion.style.display == "block") {
+      _vistas_base__WEBPACK_IMPORTED_MODULE_0__.elementos.cajaEdicion.style.display = "none";
+    } else {
+      _vistas_base__WEBPACK_IMPORTED_MODULE_0__.elementos.cajaEdicion.style.display = "block";
     }
   });
 }
@@ -160,15 +170,23 @@ if (_vistas_base__WEBPACK_IMPORTED_MODULE_0__.elementos.buttonEdicion !== 'caden
 _vistas_base__WEBPACK_IMPORTED_MODULE_0__.elementos.cajaRespuesta.addEventListener('click', function (e) {
   //si coincide en que sea el boton de cancelar respuesta
   //elimina el contenido
+  // if(e.target.id === 'cancelarRespuesta'){
+  //     foroView.quitarCaja(e.target.id);
+  // }
   if (e.target.id === 'cancelarRespuesta') {
-    _vistas_foroView__WEBPACK_IMPORTED_MODULE_1__.quitarCaja(e.target.id);
+    _vistas_base__WEBPACK_IMPORTED_MODULE_0__.elementos.cajaRespuesta.style.display = "none";
   }
 });
 _vistas_base__WEBPACK_IMPORTED_MODULE_0__.elementos.cajaEdicion.addEventListener('click', function (e) {
+  // if(e.target.id === 'cancelarEdicion'){
+  //     foroView.quitarCaja(e.target.id);
+  // }
   if (e.target.id === 'cancelarEdicion') {
-    _vistas_foroView__WEBPACK_IMPORTED_MODULE_1__.quitarCaja(e.target.id);
+    _vistas_base__WEBPACK_IMPORTED_MODULE_0__.elementos.cajaEdicion.style.display = "none";
   }
 });
+_vistas_base__WEBPACK_IMPORTED_MODULE_0__.elementos.cajaEdicion.style.display = "none";
+_vistas_base__WEBPACK_IMPORTED_MODULE_0__.elementos.cajaRespuesta.style.display = "none";
 })();
 
 /******/ })()

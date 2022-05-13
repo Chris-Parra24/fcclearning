@@ -24,7 +24,7 @@
                         Recursos
                     </x-jet-nav-link>
 
-                    <x-jet-nav-link href="{{ route('helplog') }}" :active="request()->routeIs('helplog')">
+                    <x-jet-nav-link href="{{ route('helplog.index') }}" :active="request()->routeIs('helplog.index')">
                         Ayuda
                     </x-jet-nav-link>
                 </div>
@@ -161,7 +161,7 @@
                 Recursos
             </x-jet-responsive-nav-link>
 
-            <x-jet-responsive-nav-link href="{{ route('helplog') }}" :active="request()->routeIs('helplog')">
+            <x-jet-responsive-nav-link href="{{ route('helplog.index') }}" :active="request()->routeIs('helplog.index')">
                 Ayuda
             </x-jet-responsive-nav-link>
         </div>

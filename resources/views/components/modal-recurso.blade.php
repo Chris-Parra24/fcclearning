@@ -8,7 +8,7 @@ aria-hidden="true"
 >
 <div class="modal-dialog modal-lg" role="document">
   <div class="modal-content">
-    <form action="{{route('forumlog.store',auth()->user()->id)}}" method="POST">
+    <form action="{{route('resources.store',auth()->user()->id)}}" method="POST"  enctype="multipart/form-data">
       @csrf
       <div
         class="modal-header d-flex align-items-center bg-primary text-white"
@@ -27,34 +27,26 @@ aria-hidden="true"
       </div>
       <div class="modal-body">
         <div class="form-group">
-          <label for="title">Título</label>
+          <label for="name">Nombre del archivo</label>
           <input
             type="text"
             class="form-control mb-3"
             id="threadTitle"
-            placeholder="Escribe título del foro"
+            placeholder="Escribir un nombre para el archivo"
             autofocus=""
             required
-            name="title"
+            name="name"
           />
           <label for="category" class="">Categoría</label>
           <select name="category" class="form-select mb-3">
-            <option selected value="Programación">Programación</option>
-            <option value="Matemáticas">Matemáticas</option>
-            <option value="Consejos">Consejos</option>
-            <option value="Bases de datos">Bases de datos</option>
+            <option selected value="Libros">Libros</option>
+            <option value="Prácticas">Prácticas</option>
+            <option value="Videos">Videos</option>
+            <option value="Articulos">Articulos</option>
           </select>
-          <label for="description">Descripción:</label>
-          <textarea
-            class="form-control"
-            rows="5"
-            id="description"
-            placeholder="Escriba el contenido del foro"
-            name="description"
-          ></textarea>
-
+          <label for="resource">Seleccionar Archivo:</label>
+          <input type="file" name="resource" id="resource">
         </div>
-
       </div>
       <div class="modal-footer">
         <button
@@ -64,7 +56,7 @@ aria-hidden="true"
         >
           Cancelar
         </button>
-        <button type="submit" class="btn btn-primary">Subir</button>
+        <button type="submit" class="btn btn-primary">Publicar</button>
       </div>
     </form>
   </div>

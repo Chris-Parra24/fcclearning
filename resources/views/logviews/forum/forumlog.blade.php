@@ -15,7 +15,7 @@
       @foreach ($categorias as $category)
         <div class="px-5 pb-3">
           <div class="card d-flex">
-            <h5 class="card-header"><a href="{{route('forumlog.show',$category)}}">{{$category}}</a></h5>
+            <h5 class="card-header"><a class="fw-bold text-decoration-none" href="{{route('forumlog.show',$category)}}">{{$category}}</a></h5>
             <div class="card-body">
               <ul class="list-gruop p-0 m-0 list-group-flush">
                   @foreach ($forums as $item)

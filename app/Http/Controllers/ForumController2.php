@@ -39,6 +39,33 @@ class ForumController2 extends Controller
         return redirect()->route('forumlog.item',[$forum->category,$forum->id]);
     }
 
+    public function edit(Request $request, $user_id){
+        // return $request->all();
+        $forum = new Forum();
+        $forum->title=$request->title;
+        $forum->category=$request->category;
+        $forum->description=$request->description;
+        $forum->user_id=$user_id;
+        $forum->save();
+        // return $forum;
+        return redirect()->route('forumlog.item',[$forum->category,$forum->id]);
+    }
+    public function reply(Request $request, $user_id, Forum $forum){
+        $reply=new Reply();
+        $reply->user_id=$user_id;
+        $reply->forum_id=$forum->id;
+        $reply->description=$request->description;
+        $reply->save();
+        return redirect()->route('forumlog.item',[$forum->category,$forum->id]);
+    }
+    public function update(Request $request, Forum $forum){
+
+        $forum->title=$request->title;
+        $forum->description=$request->description;
+        $forum->save();
+        return redirect()->route('forumlog.item',[$forum->category,$forum->id]);
+    }
+
     public function item($category,$id){
         $forum=Forum::where('id',$id)->get()->first();
         $userforum=User::where('id',$forum->user_id)->get()->first();

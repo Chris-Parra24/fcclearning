@@ -1,6 +1,6 @@
 <x-app-layout>
    
-    <div class="container">
+    <div class="container mt-3">
         <x-boton-crear-foro/>
         <div class="my-3 border rounded p-3">
             <h1 class="">Foros sobre: <span class="text-primary">{{$forums[0]->category}}</span></h1>
